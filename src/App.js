@@ -1,13 +1,9 @@
-import "./App.css";
-import Counter from "./components/Counter";
-import Header from "./components/Header";
-import { configureStore } from "@reduxjs/toolkit";
-import counterReducer from "./reducers/CounterReducer";
-import { Provider } from "react-redux";
+import './App.css';
+import Counter from './components/Counter';
+import Header from './components/Header';
+import { CounterProvider } from './context/CounterContext';
 
 function App() {
-  const store = configureStore({reducer: counterReducer});
-
   return (
     <div className="App">
       <Provider store={store}>

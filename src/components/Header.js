@@ -3,9 +3,8 @@ import { useSelector } from "react-redux";
 import "./header.css";
 
 export default function Header(props) {
-  const counter = useSelector((state) => {
-    return state;
-  });
+    
+    const [count, setCount] = useContext(CounterContext);
 
   return (
     <div className="header">
@@ -14,3 +13,4 @@ export default function Header(props) {
     </div>
   );
 }
+

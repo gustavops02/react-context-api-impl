@@ -3,10 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 export default function Counter(props) {
 
-    const counter = useSelector((state) => {
-        return state;
-    })
-    const dispatch = useDispatch()
+    const [count, setCount] = useContext(CounterContext)
 
     return (
         <div>
