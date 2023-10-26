@@ -1,15 +1,18 @@
 import React, { useContext, useState } from "react";
-import { CounterContext } from "../context/CounterContext";
+import { useDispatch, useSelector } from "react-redux";
 
 export default function Counter(props) {
 
-    const [count, setCount] = useContext(CounterContext)
+    const counter = useSelector((state) => {
+        return state;
+    })
+    const dispatch = useDispatch()
 
     return (
         <div>
-            <div>{count}</div>
-            <button onClick={() => {setCount(prev => prev-1)}}>-</button>
-            <button onClick={() => {setCount(prev => prev+1)}}>+</button>
+            <div>{counter}</div>
+            <button onClick={() => { dispatch({type: 'DECREMENT'}) }}>-</button>
+            <button onClick={() => { dispatch({type:'INCREMENT'}) }}>+</button>
         </div>
     )
 }
